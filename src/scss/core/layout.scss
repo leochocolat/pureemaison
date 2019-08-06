@@ -1,0 +1,14 @@
+.section__container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    height: 100px;
+
+    padding: 0 20px;
+}
+
+@include mq-regular {
+    .section__container {
+        
+    } 
+}
