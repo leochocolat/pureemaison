@@ -4,8 +4,17 @@ $mq-wide: 1400px;
 $mq-narrow: 700px;
 $mq-extra-narrow: 500px;
 
+$book: 'Futura PT Book';
+$demi: 'Futura PT Demi';
+
+$white: #ffffff;
+$orange: #ab4d4c;
+$purple-light: #602244;
+$purple-dark: #4d1a36;
+
 @mixin mq-regular {
     @media screen and (min-width: $mq-regular) {
         @content;
     }
 }
+

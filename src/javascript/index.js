@@ -1,5 +1,5 @@
 //IMPORTS
-import Title from './components/Title.js';
+import BackgroundComponent from './components/BackgroundComponent.js';
 
 let logMessageStyles = [
     'background: linear-gradient(#8BA3FF, #5BBAFF)',
@@ -35,7 +35,9 @@ let logisWriting = [
 
 
 let loged = false;
+
 window.addEventListener('resize', listenConsole);
+
 function listenConsole() {
     if ((window.outerHeight - window.innerHeight) > 100 || (window.outerWidth - window.innerWidth) > 100) {
         if (loged == true) return;
