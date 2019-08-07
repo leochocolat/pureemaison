@@ -4,89 +4,58 @@ import Lerp from '../utils/Lerp.js';
 // EXAMPLE
 class BackgroundComponent {
 
-  constructor() {
-    _.bindAll(
-      this,
-      '_tickHandler',
-      '_resizeHandler',
-      '_mousemoveHandler'
-    );
+    constructor() {
+        _.bindAll(
+        this,
+        '_tickHandler',
+        '_resizeHandler',
+        );
 
-    this._canvas = document.querySelector('.js-background-component');
-    this._ctx = this._canvas.getContext('2d');
+        this._canvas = document.querySelector('.js-background-component');
+        this._ctx = this._canvas.getContext('2d');
 
-    this._init();
-  }
-
-  _init() {
-    this._resize();
-
-    this._ballPosition = {
-      x: this._width/2,
-      y: this._height/2
+        this._resize();
     }
 
-    this._setupEventListener();
-  }
-
-  _resize() {
-    this._width = window.innerWidth;
-    this._height = window.innerHeight;
-
-    this._canvas.width = this._width;
-    this._canvas.height = this._height;
-  }
-
-  _draw() {
-    this._ctx.clearRect(0, 0, this._width, this._height);
-    this._createBall();
-    this._updatePositions();
-  }
-
-  _createBall() {
-    this._ctx.fillStyle = 'black';
-    this._ctx.strokeStyle = "black";
-    this._ctx.lineWidth = 2;
-
-    const radius = 100;
-
-    this._ctx.beginPath();
-    this._ctx.arc(this._ballPosition.x, this._ballPosition.y, radius, 0, 2 * Math.PI);
-    this._ctx.stroke();
-    this._ctx.fill();
-  }
-
-  _updatePositions(e) {
-      if(!this._mousePosition) return;
-
-      this._ballPosition = {
-        x: Lerp.lerp(this._ballPosition.x, this._mousePosition.x, 0.1),
-        y: Lerp.lerp(this._ballPosition.y, this._mousePosition.y, 0.1)
-      };
-  }
-
-  _setupEventListener() {
-    TweenLite.ticker.addEventListener('tick', this._tickHandler);
-
-    window.addEventListener('resize', this._resizeHandler);
-
-    window.addEventListener('mousemove', this._mousemoveHandler);
-  }
-
-  _tickHandler() {
-    this._draw();
-  }
-
-  _resizeHandler() {
-    this._resize();
-  }
-
-  _mousemoveHandler(e) {
-    this._mousePosition = {
-      x: e.clientX,
-      y: e.clientY
+    createBackground(images, imagePositions) {
+        this._images = images;
+        this._imagePositions = imagePositions;
+        this._setupEventListener();
     }
-  }
+
+    _resize() {
+        this._width = window.innerWidth;
+        this._height = window.innerHeight;
+
+        this._canvas.width = this._width;
+        this._canvas.height = this._height;
+    }
+
+    _draw() {
+        this._createBackgroundImages();
+    }
+
+    _createBackgroundImages() {
+        if (!this._images) return;
+        
+        for (let i = 0; i < this._images.length; i++) {
+            this._ctx.drawImage(this._images[i], this._imagePositions[i].x - (this._images[i].width/2), this._imagePositions[i].y - (this._images[i].height/2));
+        }
+    }
+
+    _setupEventListener() {
+        TweenLite.ticker.addEventListener('tick', this._tickHandler);
+
+        window.addEventListener('resize', this._resizeHandler);
+    }
+
+    _tickHandler() {
+        this._draw();
+    }
+
+    _resizeHandler() {
+        this._resize();
+    }
 
 }
 
