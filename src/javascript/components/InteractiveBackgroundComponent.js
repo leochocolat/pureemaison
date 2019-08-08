@@ -19,19 +19,19 @@ class InteractiveBackgroundComponent {
     this._ctx = this._canvas.getContext('2d');
 
     this._dataOrange = [
-        '1.svg',
-        '2.svg',
-        '3.svg',
-        '4.svg',
-        '5.svg'
+        'a.svg',
+        'b.svg',
+        'c.svg',
+        'd.svg',
+        'e.svg'
     ]
 
     this._dataPurple = [
-        '1.svg',
-        '2.svg',
-        '3.svg',
-        '4.svg',
-        '5.svg'
+        'a.svg',
+        'b.svg',
+        'c.svg',
+        'd.svg',
+        'e.svg'
     ]
 
     this._init();
