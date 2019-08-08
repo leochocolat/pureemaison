@@ -1,5 +1,13 @@
 .navbar {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    width: calc(100% - 60px);
+
     display: flex;
+    
+    margin: 0 auto;
 
     justify-content: space-between;
     align-items: center; 
@@ -27,7 +35,8 @@
         width: 18px;
         height: 0.15em;
 
-        margin-bottom: 3px;
+        margin-bottom: 3.5px;
+        box-sizing: border-box;
          
         background: $purple-dark;
 
@@ -43,6 +52,8 @@
 }
 
 .navbar__list {
+    padding: 0;
+
     list-style: none;
 }
 
@@ -70,5 +81,20 @@
         &:after {
             display: none;
         }
+    }
+}
+
+@include mq-regular {
+    .navbar {
+        max-width: 1440px;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar__list {
+        display: none;
     }
 }

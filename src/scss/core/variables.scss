@@ -18,3 +18,15 @@ $purple-dark: #4d1a36;
     }
 }
 
+@mixin mq-narrow {
+    @media screen and (max-width: $mq-narrow) {
+        @content;
+    }
+}
+
+@mixin mq-extra-narrow {
+    @media screen and (max-width: $mq-extra-narrow) {
+        @content;
+    }
+}
+

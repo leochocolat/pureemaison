@@ -1,5 +1,14 @@
+.page-home {
+    overflow: hidden;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .home__content {
-    text-align: center
+    text-align: center;
 }
 
 .home__paragraph {
@@ -9,7 +18,7 @@
 }
 
 .home__subheading {
-    margin: 100px 0 0 0; 
+    // margin: 100px 0 0 0; 
 }
 
 .home__heading {

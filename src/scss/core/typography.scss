@@ -81,3 +81,19 @@ body {
         //stuff
     }
 }
+
+@include mq-narrow {
+    .heading {
+        font-size: 60px;
+    }   
+}
+
+@include mq-extra-narrow {
+    .heading {
+        font-size: 32px;
+    }
+
+    .subheading {
+        font-size: 11px;
+    }   
+}
