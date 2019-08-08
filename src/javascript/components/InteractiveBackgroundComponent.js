@@ -186,10 +186,10 @@ class InteractiveBackgroundComponent {
   _updatePositions(e) {
     if(!this._mousePosition) return;
 
-        this._ballPosition = {
-            x: Lerp.lerp(this._ballPosition.x, this._mousePosition.x, 0.2),
-            y: Lerp.lerp(this._ballPosition.y, this._mousePosition.y, 0.2)
-        };
+    this._ballPosition = {
+        x: Lerp.lerp(this._ballPosition.x, this._mousePosition.x, 0.2),
+        y: Lerp.lerp(this._ballPosition.y, this._mousePosition.y, 0.2)
+    };
   }
 
   _setupEventListener() {

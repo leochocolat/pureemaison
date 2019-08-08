@@ -68,7 +68,9 @@ body {
 
         background: $orange;
 
-        content: ''
+        content: '';
+
+        transition: width cubic-bezier(.85,.01,.52,1) .7s;
     }
 
     &--is-active {

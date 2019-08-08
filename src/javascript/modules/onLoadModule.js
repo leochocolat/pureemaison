@@ -15,8 +15,14 @@ class onLoadModule {
 
         this.ui = {
             clip: document.querySelector('.js-background-clip'),
-            layer: document.querySelector('.js-background-clip__colored-overlay')
+            layer: document.querySelector('.js-background-clip__colored-overlay'),
+            navbar: document.querySelector('.js-navbar'),
+            lines: document.querySelectorAll('.js-load-animation'),
+            paragraph: document.querySelector('.js-paragraph-animation'),
+            button: document.querySelector('.js-button'),
         }
+
+        this._spliteParagraph();
 
         this._setupEventListener();
     }
@@ -29,18 +35,28 @@ class onLoadModule {
         this._setupTween();
     }
 
+    _spliteParagraph() {
+        let paragraph = this.ui.paragraph;
+        let size = this.ui.paragraph.innerHeight;
+    }
+
     _setupTween() {
         this._tl = new TimelineLite();
     
         this._tweenValue = {
             clip: 100,
             layer: 100,
+            navbar: -100
         }
 
         const timing = 0.9;
     
         this._tl.to(this._tweenValue, timing, {layer: 0, ease: Power3.easeInOut, onUpdate: this._updateLayerValue}, 1);
-        this._tl.to(this._tweenValue, timing, {clip: 0, ease: Power3.easeInOut, onUpdate: this._updateClipValue, delay: .1, onComplete: this._animationCompleteHandler}, 1);
+        this._tl.to(this._tweenValue, timing, {clip: 0, ease: Power3.easeInOut, onUpdate: this._updateClipValue, delay: .1}, 1);
+
+        this._tl.from(this.ui.navbar, 1.3, {y: '-150%', ease: Power0.linear, delay: 0.4}, 1);
+
+        this._tl.staggerFrom(this.ui.lines, 0.7, {y: 50, opacity: 0, ease: Power3.easeInOut, delay: 0.6, onComplete: this._animationCompleteHandler}, 0.2, 1);
     }
 
     _updateLayerValue() {
@@ -54,6 +70,10 @@ class onLoadModule {
     _animationCompleteHandler() {
         this.ui.clip.display = 'none';
         this.ui.layer.display = 'none';
+    
+        setTimeout(() => {
+            this.ui.button.classList.add('button-secondary--is-active');
+        }, 300);
     }
     
 }
