@@ -93,6 +93,12 @@
     }
 }
 
+@include mq-extra-narrow {
+    .navbar {
+        top: 20px;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .navbar__list {
         display: none;

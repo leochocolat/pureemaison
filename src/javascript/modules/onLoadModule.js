@@ -56,8 +56,6 @@ class onLoadModule {
         this.ui.layer.display = 'none';
     }
     
-    
-
 }
 
 export default new onLoadModule();
