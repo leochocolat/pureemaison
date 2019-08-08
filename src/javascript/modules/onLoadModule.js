@@ -65,7 +65,15 @@ class onLoadModule {
     
     _updateClipValue() {
         this.ui.clip.style.clipPath = `polygon(0 0, 100% 0, 100% ${this._tweenValue.clip}%, 0 ${this._tweenValue.clip}%)`;
+        this._setVendor(this.ui.clip, 'clip-path', `polygon(0 0, 100% 0, 100% ${this._tweenValue.clip}%, 0 ${this._tweenValue.clip}%)`);
     }
+
+    _setVendor(element, property, value) {
+        element.style["webkit" + property] = value;
+        element.style["moz" + property] = value;
+        element.style["ms" + property] = value;
+        element.style["o" + property] = value;
+      }
 
     _animationCompleteHandler() {
         this.ui.clip.display = 'none';
