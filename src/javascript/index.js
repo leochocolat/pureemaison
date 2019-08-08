@@ -1,8 +1,5 @@
-//IMPORTS
-
 //COMPONENT
 import InteractiveBackgroundComponent from './components/InteractiveBackgroundComponent.js';
-
 
 //MODULES
 import onLoadModule from './modules/onLoadModule.js';
@@ -42,29 +39,29 @@ let logisWriting = [
 
 let loged = false;
 
-// window.addEventListener('resize', listenConsole);
+window.addEventListener('resize', listenConsole);
 
-// function listenConsole() {
-//     if ((window.outerHeight - window.innerHeight) > 100 || (window.outerWidth - window.innerWidth) > 100) {
-//         if (loged == true) return;
-//         loged = true;
-//         setTimeout(function() {
-//             console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//             console.log('%c ', logisWriting);
-//         }, 1000);
-//         setTimeout(function() {
-//             console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//             console.log('%c Hello Purée Maison, Bon décorticage...', logMessageStyles);
-//         }, 3000);
-//         setTimeout(function() {
-//             console.log('%c ', logEmojiStyles1);
-//         }, 4000);
-//         setTimeout(function() {
-//             console.log('%c ', logEmojiStyles2);
-//         }, 3500);
-//     } else {
-//         console.clear();
-//         console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-//         loged = false;     
-//     }
-// }
+function listenConsole() {
+    if ((window.outerHeight - window.innerHeight) > 100 || (window.outerWidth - window.innerWidth) > 100) {
+        if (loged == true) return;
+        loged = true;
+        setTimeout(function() {
+            console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            console.log('%c ', logisWriting);
+        }, 1000);
+        setTimeout(function() {
+            console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+            console.log('%c Hello Purée Maison, Bon décorticage...', logMessageStyles);
+        }, 3000);
+        setTimeout(function() {
+            console.log('%c ', logEmojiStyles1);
+        }, 4000);
+        setTimeout(function() {
+            console.log('%c ', logEmojiStyles2);
+        }, 3500);
+    } else {
+        console.clear();
+        console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        loged = false;     
+    }
+}
