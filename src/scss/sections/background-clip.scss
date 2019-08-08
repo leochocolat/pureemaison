@@ -1,0 +1,42 @@
+.background-clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100%;
+
+    overflow: hidden;
+
+    background-color: $white;
+    
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    
+    // &--is-clipped {
+    // }
+}
+
+.background-clip__logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 200px;
+    height: auto;
+
+    margin: auto;
+}
+
+.background-clip__colored-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: $orange;
+}
