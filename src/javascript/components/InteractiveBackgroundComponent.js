@@ -2,7 +2,7 @@ import _ from 'underscore';
 import {TweenMax, TimelineLite, TweenLite} from 'gsap/TweenMax';
 import Lerp from '../utils/Lerp.js';
 
-// import BackgroundComponent from './BackgroundComponent.js';
+import BackgroundComponent from './BackgroundComponent.js';
 
 // EXAMPLE
 class InteractiveBackgroundComponent {
@@ -117,23 +117,21 @@ class InteractiveBackgroundComponent {
   }
 
   _initImagesPositions() {
-    this._imagePositions = [];
-
-        for (let i = 0; i < this._imageOrange.length; i++) {
-            let pos = {
-                x: Math.random() * this._width,
-                y: Math.random() * this._height,
-            }
-            this._imagePositions.push(pos);
-        }
-    }
+    this._imagePositions = [
+      {x: 0, y: 0},
+      {x: this._width, y: 0},
+      {x: this._width - 200, y: this._height},
+      {x: this._width/2, y: this._height},
+      {x: 0 + 300, y: this._height}
+    ];
+  }
 
   _start() {
     this._initImagesPositions();
     
     this._setupEventListener();
 
-    // BackgroundComponent.createBackground(this._imagePurple, this._imagePositions);
+    BackgroundComponent.createBackground(this._imagePurple, this._imagePositions);
     this._draw();
   }
 
@@ -146,7 +144,7 @@ class InteractiveBackgroundComponent {
   }
 
   _createBall() {
-    const radius = 200;
+    const radius = 400;
 
     this._ctx.globalCompositeOperation = 'destination-in';
     
@@ -166,13 +164,22 @@ class InteractiveBackgroundComponent {
 
     _createBackgroundImages() {      
         for (let i = 0; i < this._imagePurple.length; i++) {
-            this._ctx.drawImage(this._imagePurple[i], this._imagePositions[i].x - (this._imagePurple[i].width/2), this._imagePositions[i].y - (this._imagePurple[i].height/2));
+
+          let pixelRatio = this._imagePurple[i].width/this._imagePurple[i].height;
+          let width = 500;
+          let height = width / pixelRatio;
+
+          this._ctx.drawImage(this._imagePurple[i], this._imagePositions[i].x - (width/2), this._imagePositions[i].y - (height/2), width, height);
         }
     }
 
   _createBackgroundImagesLayer() {
     for (let i = 0; i < this._imageOrange.length; i++) {
-        this._ctx.drawImage(this._imageOrange[i], this._imagePositions[i].x - (this._imageOrange[i].width/2), this._imagePositions[i].y - (this._imageOrange[i].height/2));
+      let pixelRatio = this._imageOrange[i].width/this._imageOrange[i].height;
+      let width = 500;
+      let height = width / pixelRatio;
+
+      this._ctx.drawImage(this._imageOrange[i], this._imagePositions[i].x - (width/2), this._imagePositions[i].y - (height/2), width, height);
     }
   }
 

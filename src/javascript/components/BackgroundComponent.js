@@ -39,7 +39,11 @@ class BackgroundComponent {
         if (!this._images) return;
         
         for (let i = 0; i < this._images.length; i++) {
-            this._ctx.drawImage(this._images[i], this._imagePositions[i].x - (this._images[i].width/2), this._imagePositions[i].y - (this._images[i].height/2));
+            let pixelRatio = this._images[i].width/this._images[i].height;
+            let width = 500;
+            let height = width / pixelRatio;
+
+            this._ctx.drawImage(this._images[i], this._imagePositions[i].x - (width/2), this._imagePositions[i].y - (height/2), width, height);
         }
     }
 
