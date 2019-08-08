@@ -131,7 +131,7 @@ class InteractiveBackgroundComponent {
     this._initImagesPositions();
     this._setupEventListener();
 
-    BackgroundComponent.createBackground(this._imagePurple, this._imagePositions);
+    // BackgroundComponent.createBackground(this._imagePurple, this._imagePositions);
     this._draw();
   }
 
