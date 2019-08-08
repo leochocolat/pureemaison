@@ -1,5 +1,11 @@
 //IMPORTS
+
+//COMPONENT
 import InteractiveBackgroundComponent from './components/InteractiveBackgroundComponent.js';
+
+
+//MODULES
+import onLoadModule from './modules/onLoadModule.js';
 
 let logMessageStyles = [
     'background: linear-gradient(#8BA3FF, #5BBAFF)',

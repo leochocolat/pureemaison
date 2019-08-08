@@ -1,5 +1,6 @@
 .navbar {
     display: flex;
+
     justify-content: space-between;
     align-items: center; 
 }
@@ -10,8 +11,8 @@
 }
 
 .navbar-menu-button {
-    width: 88px;
-    height: 88px;
+    min-width: 88px;
+    min-height: 88px;
 
     display: flex;
     flex-direction: column;

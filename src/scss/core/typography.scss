@@ -63,12 +63,18 @@ body {
         left: 0;
         bottom: -5px;
 
-        width: 100%;
+        width: 0;
         height: 2px;
 
         background: $orange;
 
         content: ''
+    }
+
+    &--is-active {
+        &:after {
+            width: 100%; 
+        }
     }
 
     &:hover {

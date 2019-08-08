@@ -2,7 +2,8 @@ import _ from 'underscore';
 import {TweenMax, TimelineLite, TweenLite} from 'gsap/TweenMax';
 import Lerp from '../utils/Lerp.js';
 
-import BackgroundComponent from './BackgroundComponent.js';
+// import BackgroundComponent from './BackgroundComponent.js';
+
 // EXAMPLE
 class InteractiveBackgroundComponent {
 
@@ -129,6 +130,7 @@ class InteractiveBackgroundComponent {
 
   _start() {
     this._initImagesPositions();
+    
     this._setupEventListener();
 
     // BackgroundComponent.createBackground(this._imagePurple, this._imagePositions);
